@@ -181,7 +181,7 @@ const EcomFooter = () => {
 
                 <ContactItem><i class="fa-solid fa-phone" style={{ marginRight: "10px" }} />+91-9851******</ContactItem>
 
-                <ContactItem><i class="fa-regular fa-envelope" style={{ marginRight: "10px" }} />contact@ecomm.tech</ContactItem>
+                <ContactItem><i class="fa-regular fa-envelope" style={{ marginRight: "10px" }} />contact@gecom.online</ContactItem>
 
                 <Payment src="https://www.transparentpng.com/thumb/payment-method/WNusu8-payment-method-kinds-transparent-picture.png" />
             </Right>
