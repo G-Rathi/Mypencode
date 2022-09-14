@@ -152,7 +152,7 @@ const EcomFooter = () => {
                 </SocialContainer>
                 <CopyRight>
                     <hr style={{ width: "70%", marginTop: "50px" }} />
-                    Copyright &#169; 2022 E-Comm, All Rights Reserved.
+                    Copyright &#169; 2022 gecom.online, All Rights Reserved.
                 </CopyRight>
             </Left>
 
@@ -188,7 +188,7 @@ const EcomFooter = () => {
 
             <CopyRightEnd>
                 <hr style={{ width: "70%", margin: 'auto' }} />
-                Copyright &#169; 2022 E-Comm, All Rights Reserved.
+                Copyright &#169; 2022 gecom.online, All Rights Reserved.
             </CopyRightEnd>
 
 
