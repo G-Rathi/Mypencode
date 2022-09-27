@@ -19,6 +19,7 @@ const Button = styled.button`
         margin:20px;
         `;
 
+
 const PageNotFound = () => {
     const navigate = useNavigate();
 

@@ -41,8 +41,7 @@ const Select = styled.select`
         cursor:pointer;
         ${mobile({ margin: "10px 0px" })};
         `;
-const Option = styled.option`
-        `;
+const Option = styled.option``;
 
 const EcomProductList = () => {
     const location = useLocation();
@@ -69,12 +68,9 @@ const EcomProductList = () => {
     console.log(sort);
     return (
         <Container>
-
             <EcomNavbar />
-
             <EcomAnnouncement />
             <Title>{cat}</Title>
-
             <FilterContainer>
                 <Filter>
                     <FilterText>Filter Products:</FilterText>

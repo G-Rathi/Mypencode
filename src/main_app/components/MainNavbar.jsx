@@ -18,7 +18,6 @@ const Container = styled.div`
         padding:10px;
         /* ${minimobile({ width: '380px', padding: '25px 0px' })} */
         /* ${mobile({ width: '450px', padding: '25px 0px' })} */
-
         `;
 const Wrapper1 = styled.div`
         display: flex;
@@ -27,9 +26,7 @@ const Wrapper1 = styled.div`
         text-decoration: none;
         font-size: 28px;
         ${tabMob({ display: 'none' })}
-
         `;
-
 const Wrapper2 = styled.div`
         height: 5rem;
         display:flex;
@@ -38,13 +35,10 @@ const Wrapper2 = styled.div`
         padding: 20px 0px;
         align-items: center;
         font-size: 28px;
-
         /* text-align: center; */
         ${tabMob({ display: 'block' })}
         /* ${mobile({ padding: '20px 0px' })} */
         `;
-
-
 const Logo = styled.div`
         font-size: 35px;
         cursor:pointer;
@@ -52,7 +46,6 @@ const Logo = styled.div`
         ${mobile({ textAlign: 'left' })}
         font-family: 'Dancing Script', cursive;
         `;
-
 const Navitems = styled.div`
         display: flex;
         float: right;
@@ -68,12 +61,10 @@ const NavItem = styled.div`
             color:wheat;
         }
         `;
-
 const Hamburger = styled.div`
         text-align: right;
         margin-top: -47px;
         `;
-
 const Bar = styled.div`
         text-align: center;
         /* position:absolute; */
@@ -83,7 +74,6 @@ const Bar = styled.div`
         padding-left: 60px;
         display: none;
         ${tabMob({ display: 'block' })}
-
         `;
 
 
@@ -96,13 +86,11 @@ const MainNavbar = () => {
     const handleLogo = () => {
         navigate('/')
     }
-
     const handleHamburger = () => {
         setBar(!bar)
     }
 
     return (
-
         <Container className='px-5'>
             <Wrapper1 className='navbar'>
                 <Logo onClick={handleLogo}>Mypencode</Logo>
@@ -113,28 +101,25 @@ const MainNavbar = () => {
                     <Link to='/help' style={{ textDecoration: 'none' }}><NavItem className='navbar__item'>Help</NavItem></Link>
                 </Navitems>
             </Wrapper1>
-
             <Wrapper2 className='navbar' >
                 <Logo onClick={handleLogo}>Mypencode</Logo>
                 <Hamburger>
                     <button class="navbar-toggler third-button text-white"
                         onClick={handleHamburger}>
                         <div>
-                            {bar === false && <i class="fa-solid fa-bars" />}
-                            {bar === true && <i class="fa-solid fa-x" />}
+                            {!bar && <i class="fa-solid fa-bars" />}
+                            {bar && <i class="fa-solid fa-x" />}
                         </div>
                     </button>
                 </Hamburger>
             </Wrapper2>
-
-            {bar === true &&
+            {bar &&
                 <Bar>
                     <Link to='/' style={{ textDecoration: 'none' }}><NavItem className='navbar__item'>Home</NavItem></Link>
                     <Link to='/about' style={{ textDecoration: 'none' }}><NavItem className='navbar__item'>About Us</NavItem></Link>
                     <Link to='/contact' style={{ textDecoration: 'none' }}><NavItem className='navbar__item'>Contact</NavItem></Link>
                     <Link to='/help' style={{ textDecoration: 'none' }}><NavItem className='navbar__item'>Help</NavItem></Link>
                 </Bar>}
-
         </Container>
     )
 }

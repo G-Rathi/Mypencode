@@ -7,16 +7,13 @@ import { useState } from 'react';
 const Container = styled.div`
         width:100vw;
         height: 100vh;
-
         background: linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url("https://wallpaperaccess.com/full/486695.jpg") center ;
-
         background-size: cover;
         overflow: hidden;
         display: flex;
         align-items: center;
         justify-content: center;
         `;
-
 const Wrapper = styled.div`
         padding: 20px;
         width: 30%;
@@ -25,24 +22,20 @@ const Wrapper = styled.div`
         ${tablet({ margin: '40px' })};
         ${laptop({ width: "800px" })};
         `;
-
 const Title = styled.h1`
         font-size: 25px;
         font-weight: 300; 
         `;
-
 const Form = styled.form`
         display:flex;
         flex-direction: column;
         `;
-
 const Input = styled.input`
         flex:1;
         min-width: 30%;
         padding: 10px;
         margin: 10px 0px; 
         `;
-
 const Button = styled.button`
         width: 40%;
         border: none;
@@ -54,14 +47,12 @@ const Button = styled.button`
         margin-bottom: 10px;
         ${mobile({ width: "50%", padding: '15px 5px' })};
         `;
-
 const L = styled.a`
         margin: 5px 0px;
         font-size: 12px;
         text-decoration: underline;
         cursor: pointer;
         `;
-
 const Error = styled.span`
         color:red;
         `;
@@ -102,11 +93,9 @@ const CrLogin = (props) => {
 
     function submit(e) {
         e.preventDefault();
-        usernameHandler();
-        passwordHandler();
-
         if (username <= 3 || password < 5) {
-
+            usernameHandler();
+            passwordHandler();
         } else {
             localStorage.setItem('login', true);
             navigate('/crud/');
@@ -123,19 +112,14 @@ const CrLogin = (props) => {
                     {
                         usernameErr && <Error>It should contain atleast 3 character!</Error>
                     }
-
                     <Input type='password' placeholder="Password" onChange={passwordLength} />
                     {
                         passwordErr && <Error>It should contain atleast 5 character!</Error>
                     }
-
                     <Button onClick={submit}>LOGIN</Button>
-
                     <L>DO NOT YOU REMEMBER THE PASSWORD?</L>
-
-                    <L><Link className='text-decoration-none text-black' to='/crud/register'>CREATE A NEW ACCOUNT</Link></L>
-
-                    <L> <Link className='text-decoration-none text-black' to="/crud/">BACK TO HOME</Link></L>
+                    <L><Link className='text-decoration-none' to='/crud/register'>CREATE A NEW ACCOUNT</Link></L>
+                    <L> <Link className='text-decoration-none' to="/crud/">BACK TO HOME</Link></L>
                 </Form>
             </Wrapper>
         </Container>

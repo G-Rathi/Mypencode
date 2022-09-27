@@ -47,8 +47,8 @@ const Routers = () => {
             <Route exact path="/ecom" element={<EcomHome />} />
             <Route exact path="/ecom/*" element={<PageNotFound />} />
             <Route path="/ecom/products" element={<EcomProductList />} />
-            <Route path="/ecom/products/:category" element={<EcomProductList />} />
-            <Route path="/ecom/product/:id" element={<EcomProductSingle />} />
+            {/* <Route path="/ecom/products/:category" element={<EcomProductList />} />*/}
+            <Route path="/ecom/products/:id" element={<EcomProductSingle />} />
             <Route path="/ecom/cart" element={<EcomCart />} />
             <Route path="/ecom/login" element={<EcomLogin />} />
             <Route path="/ecom/register" element={<EcomRegister />} />

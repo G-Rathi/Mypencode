@@ -10,7 +10,6 @@ const Container = styled.div`
         justify-content: center;
         flex-direction: column;
         `;
-
 const Title = styled.h1`
         font-size: 70px;
         margin-bottom: 20px;
@@ -18,7 +17,6 @@ const Title = styled.h1`
         ${bmobile({ width: "70%", fontSize: '50px' })}
         ${tablet({ width: "70%", textAlign: "center" })}
         `;
-
 const Desc = styled.div`
         font-size: 24px;
         font-weight: 300;
@@ -27,7 +25,6 @@ const Desc = styled.div`
         ${bmobile({ textAlign: "center" })};
         ${tablet({ textAlign: "center" })};
         `;
-
 const InputContainer = styled.div`
         width:50%;
         height: 40px;
@@ -35,11 +32,7 @@ const InputContainer = styled.div`
         display: flex;
         /* justify-content: space-between; */
         border: 1px solid lightgrey;
-        /* ${mobile({ width: "70%", })}
-        ${bmobile({ width: "70%" })}
-        ${tablet({ width: "70%" })} */
         `;
-
 const Input = styled.input`
         border:none;
         flex:8;
@@ -48,7 +41,6 @@ const Input = styled.input`
         ${bmobile({ width: "70%" })}
         ${tablet({ width: "70%" })}
         `;
-
 const Button = styled.button`
         flex:1;
         border:none;
@@ -66,7 +58,6 @@ const Button = styled.button`
 
 
 const EcomNewsLetter = () => {
-
     const [inputVal, setInputVal] = useState('');
 
     function getValue(val) {
@@ -79,19 +70,14 @@ const EcomNewsLetter = () => {
 
     }
 
-
-
-
     return (
         <Container>
-
             <Title>Newsletter</Title>
             <Desc>Get timely updates from your favourite products.</Desc>
             <InputContainer>
                 <Input placeholder="Your email" onChange={(e) => getValue(e.target.value)} />
                 <Button onClick={(e) => submitEmail(e)}>Send</Button>
             </InputContainer>
-
         </Container>
     )
 }

@@ -11,7 +11,6 @@ const EcomHome = () => {
 
     return (
         <div>
-
             <EcomNavbar />
             <EcomAnnouncement />
             <EcomSlider />

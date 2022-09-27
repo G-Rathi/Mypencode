@@ -9,7 +9,6 @@ import { bmobile } from '../components/MainResponsive';
 const Container = styled.div`
         width:100%;
         `;
-
 const MainSection = styled.div`
         display:flex;
         justify-content: center;
@@ -18,14 +17,12 @@ const MainSection = styled.div`
         width:100%;
         height: 100%;
         `;
-
 const Wrapper = styled.div`
         display:flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         `;
-
 const Button = styled.button`
         width:100%;
         margin:50px 0px;
@@ -47,25 +44,23 @@ const Button = styled.button`
             color:wheat;
         }
         `;
-
 const MainHome = () => {
     const navigate = useNavigate();
-
-
 
     const handleCalculator = (e) => {
         e.preventDefault();
         navigate('/calculator')
     }
+
     const handleCrudApp = (e) => {
         e.preventDefault();
         navigate('/crud')
     }
+
     const handleEcomApp = (e) => {
         e.preventDefault();
         navigate('/ecom')
     }
-
 
     return (
         <Container>
@@ -78,7 +73,6 @@ const MainHome = () => {
                 </Wrapper>
             </MainSection>
             <MainFooter />
-
         </Container>
     )
 }

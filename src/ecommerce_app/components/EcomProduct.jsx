@@ -15,11 +15,8 @@ const Info = styled.div`
       justify-content: center;
       opacity: 0;
       transition: all 0.5s ease;
-
       `;
-
 const Container = styled.div`
-      /* flex:1; */
       margin: 5px;
       min-width: 300px;
       height: 350px;
@@ -29,13 +26,10 @@ const Container = styled.div`
       width:20%;
       background-color: #e2f2f9;
       position: relative;
-      
-
       &:hover ${Info}{
         opacity: 1;
       }
       `;
-
 const Circle = styled.div`
       width: 200px;
       height: 200px;
@@ -49,7 +43,6 @@ const Image = styled.img`
       width: 70%;
       object-fit: cover;
       `;
-
 const Icon = styled.div`
       width: 40px;
       height: 40px;
@@ -61,7 +54,6 @@ const Icon = styled.div`
       margin: 10px;
       transition: all 0.5s ease;
       cursor: pointer;
-
       &:hover{
         background-color: #e2f2f9;
         transform: scale(1.5);
@@ -80,8 +72,7 @@ const EcomProduct = ({ item }) => {
                     <i class="fa-solid fa-cart-shopping" />
                 </Icon>
                 <Icon>
-
-                    <Link to={`/ecom/product/${item.id}`} style={{ color: 'black' }} >
+                    <Link to={`/ecom/products/${item.id}`} style={{ color: 'black' }} >
                         <i class="fa-solid fa-magnifying-glass" />
                     </Link>
                 </Icon>

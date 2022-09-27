@@ -13,7 +13,6 @@ const CaContainer = styled.div`
         flex-direction: column;
         padding-bottom:40px;
         `;
-
 const Wrapper = styled.div`
         padding: 20px;
         width: 30vw;
@@ -25,7 +24,6 @@ const Wrapper = styled.div`
         ${mobile({ width: '100%' })}
         ${mini_tablet({ width: '80%' })}
         `;
-
 const Title = styled.h1`
         color: black;
         margin: 2% 50% 2% 50%;
@@ -34,11 +32,8 @@ const Title = styled.h1`
         text-decoration: underline;
         cursor: pointer;
         font-family: 'Dancing Script', cursive;
-       
         ${mini_tablet({ fontSize: '32px', })}
-
         `;
-
 const Input = styled.input`
         width: 100%;
         height: 30%;
@@ -49,7 +44,6 @@ const Input = styled.input`
         letter-spacing: 1px;
         border-radius: 10px;
         `;
-
 const Buttons = styled.div`
         display: flex;
         flex-wrap: wrap;
@@ -58,7 +52,6 @@ const Buttons = styled.div`
         height: 65%;
         margin: 20px 0px;
         `;
-
 const Button = styled.button`
         width: 23%;
         height: 18%;
@@ -70,7 +63,6 @@ const Button = styled.button`
             border:2px solid #a091de;
         };
         `;
-
 const AC = styled.button`
         width: 49%;
         height: 18%;
@@ -80,10 +72,8 @@ const AC = styled.button`
 
         &:focus{
             border:2px solid #a091de;
-        };
-        
+        } 
         `;
-
 const Clear = styled.button`
         width:23%;
         height: 18%;
@@ -93,9 +83,8 @@ const Clear = styled.button`
 
         &:focus{
             border:2px solid #a091de;
-        };
+        }
         `;
-
 const IsEqualTo = styled.button`
         width:23%;
         height: 18%;
@@ -107,7 +96,6 @@ const IsEqualTo = styled.button`
             border:2px solid #a091de;
         };
         `;
-
 const BackButton = styled.button`
         width:12rem;
         height:100%;
@@ -138,8 +126,6 @@ const Calculator = () => {
         setResult(result + e.target.name);
     }
 
-
-
     function clear(e) {
         try {
             e.preventDefault();
@@ -150,7 +136,6 @@ const Calculator = () => {
             setResult('')
         }
     }
-
 
     function ac(e) {
         e.preventDefault();
@@ -167,18 +152,15 @@ const Calculator = () => {
         }
     }
 
-
     const handleBack = (e) => {
         e.preventDefault();
         navigate('/')
     }
+
     return (
         <Container>
-
             <BackButton onClick={handleBack}>Back to Home</BackButton>
-
             <CaContainer>
-
                 <Title>CALCULATOR</Title>
                 <Wrapper>
                     <Input placeholder='0' value={result} />
@@ -193,7 +175,6 @@ const Calculator = () => {
                         <IsEqualTo onClick={isEqualTo}>=</IsEqualTo>
                     </Buttons>
                 </Wrapper>
-
             </CaContainer>
         </Container>
     )

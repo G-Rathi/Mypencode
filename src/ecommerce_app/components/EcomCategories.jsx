@@ -12,6 +12,7 @@ const Container = styled.div`
         ${bmobile({ padding: "0px", flexDirection: "column" })}
         `;
 
+
 const EcomCategories = () => {
     return (
         <Container>

@@ -1,11 +1,12 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components'
 import EcomNavbar from '../components/EcomNavbar'
 import EcomAnnouncement from '../components/EcomAnnouncement'
 import EcomNewsLetter from '../components/EcomNewsLetter'
 import EcomFooter from '../components/EcomFooter'
 import { mobile, bmobile, tablet, laptop } from '../components/EcomResponsive'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import axios from 'axios'
 
 
 const Container = styled.div``;
@@ -23,11 +24,12 @@ const ImgContainer = styled.div`
         `;
 
 const Image = styled.img`
-        width: 100%;
-        height: 90vh;
+        width: 80%;
+        height: 80%;
         object-fit:cover;
-        ${mobile({ height: "50vh" })}
-        ${bmobile({ height: "50vh" })}
+        /* ${mobile({ height: "50vh" })} */
+        /* ${bmobile({ height: "50%", width: '70%' })} */
+        /* ${tablet({ height: "90%", width: '90%' })} */
         `;
 
 const InfoContainer = styled.div`
@@ -131,8 +133,12 @@ const Button = styled.button`
 
 
 const EcomProductSingle = () => {
+    const [product, setProduct] = useState({});
+    const [error, setError] = useState();
     const [amount, setAmount] = useState(1);
     const navigate = useNavigate();
+    const { id } = useParams();
+    console.log(id);
 
     function beforeZero() {
         if (amount <= 0) {
@@ -142,9 +148,28 @@ const EcomProductSingle = () => {
         }
     }
 
+    const loadProduct = () => {
+        axios.get(`https://fakestoreapi.com/products/${id}`)
+            .then((res) => {
+                // console.log(res.data)
+                setProduct(res.data)
+            })
+            .catch((error) => { setError(error) })
+    }
+
+    useEffect(() => {
+        loadProduct();
+    }, [])
+
+    console.log(product.title);
+
     function gotocart(e) {
         e.preventDefault();
-        navigate('/cart')
+        navigate('/ecom/cart')
+    }
+
+    if (error) {
+        return `Error:${error.message}`
     }
 
 
@@ -154,16 +179,16 @@ const EcomProductSingle = () => {
             <EcomAnnouncement />
             <Wrapper>
                 <ImgContainer>
-                    <Image src="https://cdna.lystit.com/photos/b577-2015/05/31/mother-porch-swings-picket-fences-short-sleeve-jumpsuit-product-2-153352953-normal.jpeg" />
+                    {/*<Image src="https://cdna.lystit.com/photos/b577-2015/05/31/mother-porch-swings-picket-fences-short-sleeve-jumpsuit-product-2-153352953-normal.jpeg" /> */}
+                    <Image src={product.image} />
                 </ImgContainer>
                 <InfoContainer>
-
-                    <Title>Denim Jumpsuit</Title>
-
-                    <Desc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat dignissimos similique minus illum? Accusamus ducimus perspiciatis necessitatibus dolorem repellendus natus, qui facere pariatur laborum, dolorum fuga voluptatum debitis rem, vero molestias molestiae quo provident.</Desc>
-
-                    <Price>$ 20</Price>
-
+                    {/* <Title>Denim Jumpsuit</Title> */}
+                    <Title>{product.title}</Title>
+                    {/* <Desc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat dignissimos similique minus illum? Accusamus ducimus perspiciatis necessitatibus dolorem repellendus natus, qui facere pariatur laborum, dolorum fuga voluptatum debitis rem, vero molestias molestiae quo provident.</Desc>*/}
+                    <Desc>{product.description}</Desc>
+                    {/* <Price>$ 20</Price>*/}
+                    <Price>$ {product.price}</Price>
                     <FilterContainer>
                         <Filter>
                             <FilterTitle>Color:</FilterTitle>
@@ -183,7 +208,6 @@ const EcomProductSingle = () => {
                             </FilterSize>
                         </Filter>
                     </FilterContainer>
-
                     <AddContainer>
                         <AmountContainer>
                             <i class="fa-solid fa-minus" style={{ cursor: 'pointer' }} onClick={beforeZero} />
@@ -192,7 +216,6 @@ const EcomProductSingle = () => {
                         </AmountContainer>
                         <Button onClick={gotocart}>Add To Cart</Button>
                     </AddContainer>
-
                 </InfoContainer>
             </Wrapper>
             <EcomNewsLetter />

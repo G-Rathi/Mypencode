@@ -15,7 +15,6 @@ const MSection = styled.div`
         align-items: center;
         text-align: center;
         `;
-
 const H1 = styled.h1`
         font-size: 10rem;
        
@@ -23,7 +22,6 @@ const H1 = styled.h1`
         ${tabMob({ fontSize: '5rem' })}
         ${miniLaptop({ fontSize: '5rem' })}
         `;
-
 const MainAbout = () => {
     return (
         <Container>
@@ -33,7 +31,6 @@ const MainAbout = () => {
             </MSection>
             <MainFooter />
         </Container>
-
     )
 }
 
