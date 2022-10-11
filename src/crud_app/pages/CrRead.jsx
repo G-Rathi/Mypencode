@@ -19,7 +19,6 @@ const Wrapper = styled.div`
             height:100vh;
             `;
 const Td = styled.td`
-            /* ${mobile({ width: '100%', textAlign: 'center' })} */
             ${tablet({ width: '100%', textAlign: 'center' })}
             `;
 const Button = styled.button`
@@ -33,24 +32,25 @@ const CrRead = () => {
     const [users, setUsers] = useState([]);
     const [error, setError] = useState('');
 
-    const loadUsers = () => {
-        axios.get('https://631879d7ece2736550cb0a11.mockapi.io/users')
-            .then((res) => {
-                // console.log(res.data)
-                setUsers(res.data.reverse())
-            })
-            .catch((error) => { setError(error) })
+    const loadUsers = async () => {
+        try {
+            const fetchUsers = await axios.get('https://631879d7ece2736550cb0a11.mockapi.io/users')
+            const response = await fetchUsers.data
+            setUsers(response.reverse())
+        }
+        catch (error) {
+            setError(error.message)
+        }
     }
 
-    const handleDelete = (e, id) => {
+    const handleDelete = async (e, id) => {
         e.preventDefault();
-        axios.delete(`https://631879d7ece2736550cb0a11.mockapi.io/users/${id}`)
-            .then(() => loadUsers())
-            .catch((error) => { setError(error) })
+        const deleteUser = await axios.delete(`https://631879d7ece2736550cb0a11.mockapi.io/users/${id}`)
+        console.log(deleteUser)
+        loadUsers()
     }
 
     useEffect(() => {
-        // console.log('Crud App')
         loadUsers()
     }, [])
 

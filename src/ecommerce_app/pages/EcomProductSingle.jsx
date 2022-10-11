@@ -148,20 +148,20 @@ const EcomProductSingle = () => {
         }
     }
 
-    const loadProduct = () => {
-        axios.get(`https://fakestoreapi.com/products/${id}`)
-            .then((res) => {
-                // console.log(res.data)
-                setProduct(res.data)
-            })
-            .catch((error) => { setError(error) })
+    const loadProduct = async () => {
+        try {
+            const productData = await axios.get(`https://fakestoreapi.com/products/${id}`)
+            const response = await productData.data
+            setProduct(response)
+        }
+        catch (error) {
+            setError(error.message)
+        }
     }
 
     useEffect(() => {
         loadProduct();
     }, [])
-
-    console.log(product.title);
 
     function gotocart(e) {
         e.preventDefault();
@@ -179,15 +179,11 @@ const EcomProductSingle = () => {
             <EcomAnnouncement />
             <Wrapper>
                 <ImgContainer>
-                    {/*<Image src="https://cdna.lystit.com/photos/b577-2015/05/31/mother-porch-swings-picket-fences-short-sleeve-jumpsuit-product-2-153352953-normal.jpeg" /> */}
                     <Image src={product.image} />
                 </ImgContainer>
                 <InfoContainer>
-                    {/* <Title>Denim Jumpsuit</Title> */}
                     <Title>{product.title}</Title>
-                    {/* <Desc>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat dignissimos similique minus illum? Accusamus ducimus perspiciatis necessitatibus dolorem repellendus natus, qui facere pariatur laborum, dolorum fuga voluptatum debitis rem, vero molestias molestiae quo provident.</Desc>*/}
                     <Desc>{product.description}</Desc>
-                    {/* <Price>$ 20</Price>*/}
                     <Price>$ {product.price}</Price>
                     <FilterContainer>
                         <Filter>

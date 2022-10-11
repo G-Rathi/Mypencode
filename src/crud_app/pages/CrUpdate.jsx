@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useReducer } from 'react'
 import CrNavbar from '../components/CrNavbar'
 import { useNavigate, useParams } from 'react-router-dom'
 import axios from 'axios'
@@ -13,43 +13,54 @@ const Container = styled.div`
             height:100vh;
             `;
 
+
+
 const CrUpdate = () => {
     const [user, setUser] = useState([]);
     const [error, setError] = useState('');
-    const [name, setName] = useState()
-    const [username, setUsername] = useState()
-    const [email, setEmail] = useState()
     const navigate = useNavigate();
     const { id } = useParams();
-    console.log(id)
+    // console.log(id)
+
+    const initailState = {
+        name: user.name,
+        username: user.username,
+        email: user.email
+    }
+    const reducer = (state, action) => {
+        switch (action.type) {
+            case 'changeName':
+                return { ...state, name: action.value };
+            case 'changeUsername':
+                return { ...state, username: action.value };
+            case 'changeEmail':
+                return { ...state, email: action.value };
+            default:
+                return state
+        }
+    }
+    const [state, dispatch] = useReducer(reducer, initailState)
 
 
-    const changeName = (e) => {
-        setName(e.target.value)
-    }
-    const changeUsername = (e) => {
-        setUsername(e.target.value)
-    }
-    const changeEmail = (e) => {
-        setEmail(e.target.value)
+
+    const loadUser = async () => {
+        try {
+            const getUser = await axios.get(`https://631879d7ece2736550cb0a11.mockapi.io/users/${id}`)
+            const res = getUser.data
+            setUser(res)
+        }
+        catch (error) {
+            setError(error)
+        }
     }
 
-    const loadUser = () => {
-        axios.get(`https://631879d7ece2736550cb0a11.mockapi.io/users/${id}`)
-            .then((res) => {
-                // console.log(res.data)
-                setUser(res.data)
-            })
-            .catch((error) => {
-                setError(error)
-            })
-    }
-
-    const submit = (e) => {
+    const submit = async (e) => {
         e.preventDefault();
-        axios.put(`https://631879d7ece2736550cb0a11.mockapi.io/users/${id}`, {
-            name: name, username: username, email: email
-        }).then(() => navigate('/crud/read'))
+        const updateUser = await axios.put(`https://631879d7ece2736550cb0a11.mockapi.io/users/${id}`, {
+            name: state.name, username: state.username, email: state.email
+        })
+        console.log(updateUser)
+        navigate('/crud/read')
     }
 
     useEffect(() => {
@@ -73,15 +84,15 @@ const CrUpdate = () => {
                 <form>
                     <div className="mb-3">
                         <label className="form-label">Name</label>
-                        <input type="text" className="form-control" defaultValue={user.name} onChange={(e) => changeName(e)} />
+                        <input type="text" className="form-control" defaultValue={user.name} onChange={(e) => dispatch({ type: 'changeName', value: e.target.value })} />
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Username</label>
-                        <input type="text" className="form-control" defaultValue={user.username} onChange={(e) => changeUsername(e)} />
+                        <input type="text" className="form-control" defaultValue={user.username} onChange={(e) => dispatch({ type: 'changeUsername', value: e.target.value })} />
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Email</label>
-                        <input type="email" className="form-control" defaultValue={user.email} onChange={(e) => changeEmail(e)} />
+                        <input type="email" className="form-control" defaultValue={user.email} onChange={(e) => dispatch({ type: 'changeEmail', value: e.target.value })} />
                     </div>
                     <button type="submit" className="btn btn-primary" onClick={submit} >Update</button>
                     <button type="submit" className="btn btn-dark ms-5" onClick={handleBack} >Back</button>

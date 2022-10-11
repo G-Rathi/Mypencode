@@ -56,7 +56,6 @@ const Navbar = () => {
     const [menubar, setMenubar] = useState(false)
     const navigate = useNavigate();
     const userLoggedIn = localStorage.getItem('login');
-    console.log(userLoggedIn)
 
     const logout = () => {
         if (userLoggedIn) {
@@ -74,7 +73,6 @@ const Navbar = () => {
         if (userLoggedIn) {
             console.log('logged in')
             alert('You are already logged in!')
-            // navigate('/crud')
         } else {
             navigate('/crud/login')
         }
@@ -83,7 +81,6 @@ const Navbar = () => {
     const Register = () => {
         if (userLoggedIn) {
             alert('You are Logged in! To create New Account you have to logout first.')
-            // navigate('/crud')
         } else {
             navigate('/crud/register')
         }

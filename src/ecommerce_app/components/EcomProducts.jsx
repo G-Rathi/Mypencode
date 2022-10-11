@@ -15,22 +15,23 @@ const Container = styled.div`
         `;
 
 
-const EcomProducts = ({ cat, filters, sort }) => {
+const EcomProducts = () => {
     const [productData, setProductData] = useState([]);
 
+    const getData = async () => {
+        try {
+            const productsdata = await axios.get('https://fakestoreapi.com/products')
+            const res = await productsdata.data
+            setProductData(res)
+        }
+        catch (error) {
+            console.log(error.message)
+        }
+    }
 
     useEffect(() => {
-        axios.get('https://fakestoreapi.com/products')
-            .then((res) => {
-                console.log(res)
-                setProductData(res.data);
-            })
-            .catch((err) => {
-                console.log(err)
-            })
+        getData()
     }, [])
-
-    // console.log(productData);
 
     return (
         <Container>

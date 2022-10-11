@@ -67,7 +67,6 @@ const EcomNewsLetter = () => {
     function submitEmail(e) {
         e.preventDefault();
         (inputVal.match('@')) ? (alert('Thanks for reaching out! You will get latest Updates of your Favourite Product on your email soon.')) : ((inputVal === '') ? (alert('Please enter your email address!')) : (alert('Please enter your valid email address !')));
-
     }
 
     return (

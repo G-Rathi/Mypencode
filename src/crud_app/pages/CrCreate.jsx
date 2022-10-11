@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useReducer } from 'react'
 import CrNavbar from '../components/CrNavbar'
 import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
@@ -22,28 +22,41 @@ const FormSection = styled.div`
 
 
 
+
+const initialState = {
+    name: '',
+    username: '',
+    email: '',
+}
+const reducer = (state, action) => {
+    switch (action.type) {
+        case 'inputName':
+            return { ...state, name: action.value };
+        case 'inputUsername':
+            return { ...state, username: action.value };
+        case 'inputEmail':
+            return { ...state, email: action.value };
+        default:
+            return state
+    }
+}
+
 const CrCreate = () => {
-    const [name, setName] = useState()
-    const [username, setUsername] = useState()
-    const [email, setEmail] = useState()
     const navigate = useNavigate();
+    const [state, dispatch] = useReducer(reducer, initialState)
 
-
-    const inputName = (e) => {
-        setName(e.target.value)
-    }
-    const inputUsername = (e) => {
-        setUsername(e.target.value)
-    }
-    const inputEmail = (e) => {
-        setEmail(e.target.value)
-    }
-
-    const submit = (e) => {
+    const submit = async (e) => {
         e.preventDefault();
-        axios.post('https://631879d7ece2736550cb0a11.mockapi.io/users', {
-            name: name, username: username, email: email
-        }).then(() => { navigate('/crud/read') })
+        try {
+            const userDetail = await axios.post('https://631879d7ece2736550cb0a11.mockapi.io/users', {
+                name: state.name, username: state.username, email: state.email
+            })
+            console.log(userDetail)
+            navigate('/crud/read')
+        }
+        catch (error) {
+            console.log(error.message)
+        }
     }
 
 
@@ -55,21 +68,21 @@ const CrCreate = () => {
                 <form onSubmit={submit}>
                     <div className="mb-3">
                         <label className="form-label">Name</label>
-                        <input type="text" className="form-control" onChange={(e) => inputName(e)} />
+                        <input type="text" className="form-control" onChange={(e) => dispatch({ type: 'inputName', value: e.target.value })} />
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Username</label>
-                        <input type="text" className="form-control" onChange={(e) => inputUsername(e)} />
+                        <input type="text" className="form-control" onChange={(e) => dispatch({ type: 'inputUsername', value: e.target.value })} />
                     </div>
                     <div className="mb-3">
                         <label className="form-label">Email</label>
-                        <input type="email" className="form-control" onChange={(e) => inputEmail(e)} />
+                        <input type="email" className="form-control" onChange={(e) => dispatch({ type: 'inputEmail', value: e.target.value })} />
                     </div>
                     <button type="submit" className="btn btn-primary" >Submit</button>
                 </form>
             </FormSection>
         </Container>
-    );
+    )
 }
 
 export default CrCreate
