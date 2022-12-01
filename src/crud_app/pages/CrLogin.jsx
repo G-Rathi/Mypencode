@@ -98,7 +98,7 @@ const CrLogin = (props) => {
             passwordHandler();
         } else {
             localStorage.setItem('login', true);
-            navigate('/crud/');
+            navigate(-1);
         }
     }
 
