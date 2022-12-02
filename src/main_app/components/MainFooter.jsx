@@ -114,16 +114,16 @@ const MainFooter = () => {
                     </Desc>
                     <SocialContainer>
                         <SocialIcon color='blue'>
-                            <i class="fa-brands fa-facebook-f" />
+                            <i className="fa-brands fa-facebook-f" />
                         </SocialIcon>
                         <SocialIcon color='pink'>
-                            <i class="fa-brands fa-instagram" />
+                            <i className="fa-brands fa-instagram" />
                         </SocialIcon>
                         <SocialIcon color='lightblue'>
-                            <i class="fa-brands fa-twitter" />
+                            <i className="fa-brands fa-twitter" />
                         </SocialIcon>
                         <SocialIcon color='red'>
-                            <i class="fa-brands fa-pinterest" />
+                            <i className="fa-brands fa-pinterest" />
                         </SocialIcon>
                     </SocialContainer>
                 </Left>
@@ -138,9 +138,9 @@ const MainFooter = () => {
                 </Center>
                 <Right>
                     <Title>Contact Us</Title>
-                    <ContactItem><i class="fa-solid fa-location-dot" style={{ marginRight: "10px" }} />310 Welcome, Faridabad, Haryana 123456</ContactItem>
-                    <ContactItem><i class="fa-solid fa-phone" style={{ marginRight: "10px" }} />+91-9873******</ContactItem>
-                    <ContactItem><i class="fa-regular fa-envelope" style={{ marginRight: "10px" }} />contact@pencode.tech</ContactItem>
+                    <ContactItem><i className="fa-solid fa-location-dot" style={{ marginRight: "10px" }} />310 Welcome, Faridabad, Haryana 123456</ContactItem>
+                    <ContactItem><i className="fa-solid fa-phone" style={{ marginRight: "10px" }} />+91-9873******</ContactItem>
+                    <ContactItem><i className="fa-regular fa-envelope" style={{ marginRight: "10px" }} />contact@pencode.tech</ContactItem>
                 </Right>
             </Wrapper>
             <CopyRightEnd>

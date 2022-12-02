@@ -69,15 +69,15 @@ const EcomProduct = ({ item }) => {
             <Image src={item.image} />
             <Info>
                 <Icon>
-                    <i class="fa-solid fa-cart-shopping" />
+                    <i className="fa-solid fa-cart-shopping" />
                 </Icon>
                 <Icon>
                     <Link to={`/ecom/products/${item.id}`} style={{ color: 'black' }} >
-                        <i class="fa-solid fa-magnifying-glass" />
+                        <i className="fa-solid fa-magnifying-glass" />
                     </Link>
                 </Icon>
                 <Icon>
-                    <i class="fa-regular fa-heart" />
+                    <i className="fa-regular fa-heart" />
                 </Icon>
             </Info>
         </Container>

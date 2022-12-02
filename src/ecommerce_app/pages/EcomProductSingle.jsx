@@ -206,9 +206,9 @@ const EcomProductSingle = () => {
                     </FilterContainer>
                     <AddContainer>
                         <AmountContainer>
-                            <i class="fa-solid fa-minus" style={{ cursor: 'pointer' }} onClick={beforeZero} />
+                            <i className="fa-solid fa-minus" style={{ cursor: 'pointer' }} onClick={beforeZero} />
                             <Amount>{amount}</Amount>
-                            <i class="fa-solid fa-plus" style={{ cursor: 'pointer' }} onClick={() => setAmount(amount + 1)} />
+                            <i className="fa-solid fa-plus" style={{ cursor: 'pointer' }} onClick={() => setAmount(amount + 1)} />
                         </AmountContainer>
                         <Button onClick={gotocart}>Add To Cart</Button>
                     </AddContainer>

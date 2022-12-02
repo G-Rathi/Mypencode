@@ -166,10 +166,10 @@ const Calculator = () => {
                     <Input placeholder='0' value={result} />
                     <Buttons>
                         <AC onClick={ac}>AC</AC>
-                        <Clear onClick={clear}><i class="fa-sharp fa-solid fa-delete-left"></i></Clear>
+                        <Clear onClick={clear}><i className="fa-sharp fa-solid fa-delete-left"></i></Clear>
                         {
-                            numbers.map((number) => (
-                                <Button name={number} onClick={getValue}>{number}</Button>
+                            numbers.map((number, index) => (
+                                <Button name={number} onClick={getValue} key={index}>{number}</Button>
                             ))
                         }
                         <IsEqualTo onClick={isEqualTo}>=</IsEqualTo>

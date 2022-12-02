@@ -47,7 +47,7 @@ const Button = styled.button`
         margin-bottom: 10px;
         ${mobile({ width: "50%", padding: '15px 5px' })};
         `;
-const L = styled.a`
+const L = styled.div`
         margin: 5px 0px;
         font-size: 12px;
         text-decoration: underline;

@@ -167,9 +167,9 @@ const EcomCart = () => {
                             </ProductDetail>
                             <PriceDetail>
                                 <ProductAmountContainer>
-                                    <i class="fa-solid fa-plus" style={{ cursor: "pointer" }} />
+                                    <i className="fa-solid fa-plus" style={{ cursor: "pointer" }} />
                                     <ProductAmount> 1 </ProductAmount>
-                                    <i class="fa-solid fa-minus" style={{ cursor: "pointer" }} />
+                                    <i className="fa-solid fa-minus" style={{ cursor: "pointer" }} />
                                 </ProductAmountContainer>
                                 <ProductPrice> $ 20 </ProductPrice>
                             </PriceDetail>
@@ -187,9 +187,9 @@ const EcomCart = () => {
                             </ProductDetail>
                             <PriceDetail>
                                 <ProductAmountContainer>
-                                    <i class="fa-solid fa-plus" style={{ cursor: "pointer" }} />
+                                    <i className="fa-solid fa-plus" style={{ cursor: "pointer" }} />
                                     <ProductAmount> 2 </ProductAmount>
-                                    <i class="fa-solid fa-minus" style={{ cursor: "pointer" }} />
+                                    <i className="fa-solid fa-minus" style={{ cursor: "pointer" }} />
                                 </ProductAmountContainer>
                                 <ProductPrice> $ 30 </ProductPrice>
                             </PriceDetail>

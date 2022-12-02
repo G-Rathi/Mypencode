@@ -71,7 +71,6 @@ const Navbar = () => {
 
     const loggedIn = () => {
         if (userLoggedIn) {
-            console.log('logged in')
             alert('You are already logged in!')
         } else {
             navigate('/crud/login')
@@ -99,7 +98,7 @@ const Navbar = () => {
     return (
         <MainContainer className='mb-5'>
             <Navbar1 className="navbar navbar-expand-lg navbar-dark bg-primary" >
-                <nav1 className="container">
+                <div className="container">
                     <NavLink to='/crud' className="navbar-brand"><Logo>React Crud-App</Logo></NavLink>
                     <div className="navbar-collapse " >
                         <Ul className="navbar-nav me-auto mb-2 mb-lg-0">
@@ -134,14 +133,14 @@ const Navbar = () => {
                         }
                     </Ul>
                     <button className='btn btn-outline-light' onClick={handleButtonMPC}>Back to Main</button>
-                </nav1>
+                </div>
             </Navbar1>
             <Navbar2 className="navbar navbar-expand-lg navbar-dark bg-primary">
-                <nav2 className="container">
+                <div className="container">
                     <NavLink to='/crud' className="navbar-brand"><Logo>React Crud-App</Logo></NavLink>
                     <NavLink to="/crud/adduser" className="nav-link " ><AddUserButton className="btn btn-outline-light">Add User</AddUserButton></NavLink>
                     <HamburgerButton style={{ textAlign: 'center' }}>
-                        <button class="btn btn-outline-light"
+                        <button className="btn btn-outline-light"
                             onClick={handleHamburger}>
                             <div>
                                 {!menubar && <div>☰</div>}
@@ -149,7 +148,7 @@ const Navbar = () => {
                             </div>
                         </button>
                     </HamburgerButton>
-                </nav2>
+                </div>
             </Navbar2>
             {
                 menubar &&

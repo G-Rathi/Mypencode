@@ -104,11 +104,11 @@ const MainNavbar = () => {
             <Wrapper2 className='navbar' >
                 <Logo onClick={handleLogo}>Mypencode</Logo>
                 <Hamburger>
-                    <button class="navbar-toggler third-button text-white"
+                    <button className="navbar-toggler third-button text-white"
                         onClick={handleHamburger}>
                         <div>
-                            {!bar && <i class="fa-solid fa-bars" />}
-                            {bar && <i class="fa-solid fa-x" />}
+                            {!bar && <i className="fa-solid fa-bars" />}
+                            {bar && <i className="fa-solid fa-x" />}
                         </div>
                     </button>
                 </Hamburger>

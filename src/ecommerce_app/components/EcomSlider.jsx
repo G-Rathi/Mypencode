@@ -97,7 +97,7 @@ const EcomSlider = () => {
     return (
         <Container>
             <Arrow direction='left' onClick={() => handleClick('left')}>
-                <i class="fa-solid fa-caret-left" />
+                <i className="fa-solid fa-caret-left" />
             </Arrow>
             <Wrapper slideIndex={slideIndex}>
                 {sliderItems.map(item => (
@@ -114,7 +114,7 @@ const EcomSlider = () => {
                 ))}
             </Wrapper>
             <Arrow direction='right' onClick={() => handleClick('right')}>
-                <i class="fa-solid fa-caret-right" />
+                <i className="fa-solid fa-caret-right" />
             </Arrow>
         </Container>
     )

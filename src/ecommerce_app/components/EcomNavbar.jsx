@@ -108,7 +108,7 @@ const EcomNavbar = () => {
                     <Language>EN</Language>
                     <SearchContainer>
                         <Input placeholder="Search" />
-                        <i class="fa-solid fa-magnifying-glass" style={{ color: "grey", fontSize: '16', cursor: "pointer" }} />
+                        <i className="fa-solid fa-magnifying-glass" style={{ color: "grey", fontSize: '16', cursor: "pointer" }} />
                     </SearchContainer>
                 </Left>
                 <Center>
@@ -118,7 +118,7 @@ const EcomNavbar = () => {
                     <NavLink style={{ textDecoration: 'none', color: 'black' }} to="/ecom"><MenuItems>HOME</MenuItems></NavLink>
                     <NavLink style={{ textDecoration: 'none', color: 'black' }} to="/ecom/register"><MenuItems>REGISTER</MenuItems></NavLink>
                     <NavLink style={{ textDecoration: 'none', color: 'black' }} to="/ecom/login"><MenuItems>SIGN IN</MenuItems></NavLink>
-                    <NavLink style={{ textDecoration: 'none', color: 'black' }} to="/ecom/cart"><MenuItems><i class="fa-solid fa-cart-shopping" /></MenuItems></NavLink>
+                    <NavLink style={{ textDecoration: 'none', color: 'black' }} to="/ecom/cart"><MenuItems><i className="fa-solid fa-cart-shopping" /></MenuItems></NavLink>
                     <button className='btn btn-dark btn-outline-primary ms-3' onClick={handleBackMain}>Back To Main</button>
                 </Right>
             </Wrapper1>
@@ -127,7 +127,7 @@ const EcomNavbar = () => {
                     <Language>EN</Language>
                     <SearchContainer>
                         <Input placeholder="Search" />
-                        <i class="fa-solid fa-magnifying-glass" style={{ color: "grey", fontSize: 16, cursor: "pointer" }} />
+                        <i className="fa-solid fa-magnifying-glass" style={{ color: "grey", fontSize: 16, cursor: "pointer" }} />
                     </SearchContainer>
                 </Left>
                 <Center>
@@ -135,11 +135,11 @@ const EcomNavbar = () => {
                 </Center>
                 <Right>
                     <HamburgerButton style={{ textAlign: 'center' }}>
-                        <button class="navbar-toggler third-button"
+                        <button className="navbar-toggler third-button"
                             onClick={handleHamburger}>
                             <div>
-                                {!bar && <i class="fa-solid fa-bars" />}
-                                {bar && <i class="fa-solid fa-x" />}
+                                {!bar && <i className="fa-solid fa-bars" />}
+                                {bar && <i className="fa-solid fa-x" />}
                             </div>
                         </button>
                     </HamburgerButton>
@@ -150,7 +150,7 @@ const EcomNavbar = () => {
                     <NavLink style={{ textDecoration: 'none', color: 'black' }} to="/ecom"><MenuItem>HOME</MenuItem></NavLink>
                     <NavLink style={{ textDecoration: 'none', color: 'black' }} to="/ecom/register"><MenuItem>REGISTER</MenuItem></NavLink>
                     <NavLink style={{ textDecoration: 'none', color: 'black' }} to="/ecom/login"><MenuItem>SIGN IN</MenuItem></NavLink>
-                    <NavLink style={{ textDecoration: 'none', color: 'black' }} to="/ecom/cart"><MenuItem><i class="fa-solid fa-cart-shopping" /></MenuItem></NavLink>
+                    <NavLink style={{ textDecoration: 'none', color: 'black' }} to="/ecom/cart"><MenuItem><i className="fa-solid fa-cart-shopping" /></MenuItem></NavLink>
                     <button className='btn btn-dark btn-outline-primary' onClick={handleBackMain}>Back To Main</button>
                 </Bar>
             }
