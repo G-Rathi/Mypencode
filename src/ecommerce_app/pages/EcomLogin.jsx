@@ -47,7 +47,7 @@ const Button = styled.button`
         margin-bottom: 10px;
         ${mobile({ width: "50%", padding: '15px 5px' })};
         `;
-const L = styled.a`
+const L = styled.div`
         margin: 5px 0px;
         font-size: 12px;
         text-decoration: underline;
@@ -66,28 +66,15 @@ const EcomLogin = () => {
         const [passwordErr, setPasswordErr] = useState(false);
         const navigate = useNavigate('');
 
-        const usernameLength = (e) => {
-                setUsername(e.target.value.length)
-        }
-
-        const passwordLength = (e) => {
-                setPassword(e.target.value.length)
-        }
+        const usernameLength = (e) => setUsername(e.target.value.length)
+        const passwordLength = (e) => setPassword(e.target.value.length)
 
         function usernameHandler() {
-                if (username <= 3) {
-                        setUsernameErr(true)
-                } else {
-                        setUsernameErr(false)
-                }
+                (username <= 3) ? setUsernameErr(true) : setUsernameErr(false)
         }
 
         function passwordHandler() {
-                if (password < 5) {
-                        setPasswordErr(true)
-                } else {
-                        setPasswordErr(false)
-                }
+                (password < 5) ? setPasswordErr(true) : setPasswordErr(false)
         }
 
         function submit(e) {
@@ -97,7 +84,7 @@ const EcomLogin = () => {
                         passwordHandler();
                 } else {
                         localStorage.setItem('ecomlogin', true);
-                        navigate('/ecom');
+                        navigate(-1);
                 }
         }
 

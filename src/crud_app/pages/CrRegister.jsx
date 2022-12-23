@@ -64,15 +64,8 @@ const Buttons = styled.div`
 const CrRegister = () => {
     const navigate = useNavigate('');
 
-    function create(e) {
-        e.preventDefault();
-        navigate('/crud/login');
-    }
-
-    function backtohome(e) {
-        e.preventDefault();
-        navigate('/crud/')
-    }
+    const create = () => navigate('/crud/login');
+    const backtohome = () => navigate('/crud/')
 
     return (
         <Container>

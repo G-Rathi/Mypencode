@@ -20,7 +20,6 @@ const CrUpdate = () => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
     const { id } = useParams();
-    // console.log(id)
 
     const initailState = {
         name: user.name,
@@ -40,8 +39,6 @@ const CrUpdate = () => {
         }
     }
     const [state, dispatch] = useReducer(reducer, initailState)
-
-
 
     const loadUser = async () => {
         try {
@@ -63,17 +60,17 @@ const CrUpdate = () => {
         navigate('/crud/read')
     }
 
+    const handleBack = (e) => {
+        e.preventDefault();
+        navigate(-1)
+    }
+
     useEffect(() => {
         loadUser();
     }, [])
 
     if (error) {
         return `Error:${error.message}`
-    }
-
-    const handleBack = (e) => {
-        e.preventDefault();
-        navigate(-1)
     }
 
     return (

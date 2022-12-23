@@ -91,15 +91,11 @@ const EcomNavbar = () => {
     const [bar, setBar] = useState(false);
     const navigate = useNavigate();
 
-    const handleBackMain = (e) => {
-        e.preventDefault();
-        navigate('/')
-    }
+    const handleBackMain = () => navigate('/')
 
-    const handleHamburger = (e) => {
-        e.preventDefault();
-        setBar(!bar);
-    }
+
+    const handleHamburger = () => setBar(!bar);
+
 
     return (
         <Container>

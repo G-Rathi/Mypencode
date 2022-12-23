@@ -23,10 +23,7 @@ const Button = styled.button`
 const PageNotFound = () => {
     const navigate = useNavigate();
 
-    const handleBack = (e) => {
-        e.preventDefault();
-        navigate(-1)
-    }
+    const handleBack = () => navigate(-1)
 
     return (
         <Container>

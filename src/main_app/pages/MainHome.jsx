@@ -47,20 +47,9 @@ const Button = styled.button`
 const MainHome = () => {
     const navigate = useNavigate();
 
-    const handleCalculator = (e) => {
-        e.preventDefault();
-        navigate('/calculator')
-    }
-
-    const handleCrudApp = (e) => {
-        e.preventDefault();
-        navigate('/crud')
-    }
-
-    const handleEcomApp = (e) => {
-        e.preventDefault();
-        navigate('/ecom')
-    }
+    const handleCalculator = () => navigate('/calculator')
+    const handleCrudApp = () => navigate('/crud')
+    const handleEcomApp = () => navigate('/ecom')
 
     return (
         <Container>

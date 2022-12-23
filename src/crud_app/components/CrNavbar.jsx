@@ -64,36 +64,18 @@ const Navbar = () => {
                 localStorage.removeItem('login');
                 navigate('/crud/login')
             }
-        } else {
-
         }
     }
 
     const loggedIn = () => {
-        if (userLoggedIn) {
-            alert('You are already logged in!')
-        } else {
-            navigate('/crud/login')
-        }
+        (userLoggedIn) ? alert('You are already logged in!') : navigate('/crud/login')
     }
-
     const Register = () => {
-        if (userLoggedIn) {
-            alert('You are Logged in! To create New Account you have to logout first.')
-        } else {
-            navigate('/crud/register')
-        }
+        (userLoggedIn) ? alert('You are Logged in! To create New Account you have to logout first.') : navigate('/crud/register')
     }
 
-    const handleButtonMPC = (e) => {
-        e.preventDefault();
-        navigate('/')
-    }
-
-    const handleHamburger = (e) => {
-        e.preventDefault();
-        setMenubar(!menubar);
-    }
+    const handleButtonMPC = () => navigate('/');
+    const handleHamburger = () => setMenubar(!menubar);
 
     return (
         <MainContainer className='mb-5'>

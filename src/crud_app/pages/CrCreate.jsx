@@ -59,7 +59,6 @@ const CrCreate = () => {
         }
     }
 
-
     return (
         <Container>
             <CrNavbar />

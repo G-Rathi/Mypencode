@@ -65,7 +65,6 @@ const EcomProductList = () => {
         });
     }
 
-    console.log(sort);
     return (
         <Container>
             <EcomNavbar />

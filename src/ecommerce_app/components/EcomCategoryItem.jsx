@@ -46,7 +46,6 @@ const Button = styled.button`
 const EcomCategoryItem = ({ item }) => {
         return (
                 <Container>
-                        {/*<Link to={`/ecom/products/${item.cat}`}> */}
                         <Link to='/ecom/products' >
                                 <Image src={item.img} />
                                 <Info>

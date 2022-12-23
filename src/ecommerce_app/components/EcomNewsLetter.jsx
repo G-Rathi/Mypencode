@@ -64,8 +64,7 @@ const EcomNewsLetter = () => {
         setInputVal(val);
     }
 
-    function submitEmail(e) {
-        e.preventDefault();
+    function submitEmail() {
         (inputVal.match('@')) ? (alert('Thanks for reaching out! You will get latest Updates of your Favourite Product on your email soon.')) : ((inputVal === '') ? (alert('Please enter your email address!')) : (alert('Please enter your valid email address !')));
     }
 
@@ -75,7 +74,7 @@ const EcomNewsLetter = () => {
             <Desc>Get timely updates from your favourite products.</Desc>
             <InputContainer>
                 <Input placeholder="Your email" onChange={(e) => getValue(e.target.value)} />
-                <Button onClick={(e) => submitEmail(e)}>Send</Button>
+                <Button onClick={submitEmail}>Send</Button>
             </InputContainer>
         </Container>
     )

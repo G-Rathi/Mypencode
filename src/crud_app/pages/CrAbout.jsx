@@ -6,7 +6,6 @@ import { mobile } from '../components/CrResponsive';
 const Container = styled.div`
             background:  linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url("https://wallpaperaccess.com/full/4893798.jpg") center;
             background-size: cover;
-            /* width:100vh; */
             height:100vh;
             ${mobile({ height: '100%' })}
             `;

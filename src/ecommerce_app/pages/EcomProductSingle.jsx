@@ -138,14 +138,9 @@ const EcomProductSingle = () => {
     const [amount, setAmount] = useState(1);
     const navigate = useNavigate();
     const { id } = useParams();
-    console.log(id);
 
     function beforeZero() {
-        if (amount <= 0) {
-            setAmount(0)
-        } else {
-            setAmount(amount - 1)
-        }
+        (amount <= 0) ? setAmount(0) : setAmount(amount - 1)
     }
 
     const loadProduct = async () => {
@@ -163,15 +158,11 @@ const EcomProductSingle = () => {
         loadProduct();
     }, [])
 
-    function gotocart(e) {
-        e.preventDefault();
-        navigate('/ecom/cart')
-    }
+    const gotocart = () => navigate('/ecom/cart')
 
     if (error) {
         return `Error:${error.message}`
     }
-
 
     return (
         <Container>

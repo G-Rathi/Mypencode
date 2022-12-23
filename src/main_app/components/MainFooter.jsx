@@ -101,9 +101,8 @@ const CopyRightEnd = styled.div`
 const MainFooter = () => {
     const navigate = useNavigate()
 
-    function logo() {
-        navigate('/')
-    }
+    const logo = () => navigate('/')
+
     return (
         <Container>
             <Wrapper>

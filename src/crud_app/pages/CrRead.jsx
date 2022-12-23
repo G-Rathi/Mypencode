@@ -43,8 +43,7 @@ const CrRead = () => {
         }
     }
 
-    const handleDelete = async (e, id) => {
-        e.preventDefault();
+    const handleDelete = async (id) => {
         const deleteUser = await axios.delete(`https://631879d7ece2736550cb0a11.mockapi.io/users/${id}`)
         console.log(deleteUser)
         loadUsers()
@@ -57,8 +56,6 @@ const CrRead = () => {
     if (error) {
         return `Error:${error.message}`
     }
-
-
 
     return (
         <Container>
@@ -85,7 +82,7 @@ const CrRead = () => {
                                     <td>{user.email}</td>
                                     <Td>
                                         <Link to={`/crud/update/${user.id}`}><Button className="btn btn-primary mx-2">Edit</Button></Link>
-                                        <Button className="btn btn-danger" onClick={(e) => handleDelete(e, user.id)}>Delete</Button>
+                                        <Button className="btn btn-danger" onClick={() => handleDelete(user.id)}>Delete</Button>
                                     </Td>
                                 </tr>
                             ))

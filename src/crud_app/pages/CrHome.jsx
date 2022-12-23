@@ -34,6 +34,9 @@ const CrHome = () => {
                 <h4>
                     <p>Once you have clicked on 'Read' link, a 'Users List' will appear on Screen, You can 'Edit' user details and also 'Delete' user. </p>
                 </h4>
+                <h4>
+                    <p>This Crud will be auto logout after 9 seconds. </p>
+                </h4>
             </div>
         </Div>
     )

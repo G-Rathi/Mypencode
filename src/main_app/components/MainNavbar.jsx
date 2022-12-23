@@ -82,13 +82,8 @@ const MainNavbar = () => {
     const navigate = useNavigate();
     const [bar, setBar] = useState(false);
 
-
-    const handleLogo = () => {
-        navigate('/')
-    }
-    const handleHamburger = () => {
-        setBar(!bar)
-    }
+    const handleLogo = () => navigate('/')
+    const handleHamburger = () => setBar(!bar)
 
     return (
         <Container className='px-5'>

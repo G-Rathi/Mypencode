@@ -64,15 +64,8 @@ const Buttons = styled.div`
 const EcomRegister = () => {
     const navigate = useNavigate('');
 
-    function create(e) {
-        e.preventDefault();
-        navigate('/ecom/login');
-    }
-
-    function backtohome(e) {
-        e.preventDefault();
-        navigate('/ecom')
-    }
+    const create = () => navigate('/ecom/login');
+    const backtohome = () => navigate('/ecom')
 
     return (
         <Container>
