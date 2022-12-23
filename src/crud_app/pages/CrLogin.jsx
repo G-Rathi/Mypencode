@@ -84,6 +84,10 @@ const CrLogin = (props) => {
         } else {
             localStorage.setItem('login', true);
             navigate(-1);
+            setTimeout(() => {
+                localStorage.removeItem('login')
+                window.location.reload()
+            }, 9000)
         }
     }
 
