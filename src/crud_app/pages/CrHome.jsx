@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import styled from 'styled-components';
+import { auth } from '../../Firebase';
 import CrNavbar from '../components/CrNavbar'
 import { mobile } from '../components/CrResponsive';
 
@@ -14,28 +15,40 @@ const Div = styled.div`
 
 
 const CrHome = () => {
+    const [userName, setUserName] = useState('')
+
+    useEffect(() => {
+        auth.onAuthStateChanged((user) => {
+            if (user) {
+                setUserName(user.displayName)
+            } else {
+                setUserName('')
+            }
+        })
+    }, [])
 
     return (
         <Div>
             <CrNavbar />
             <div className='container pb-5'>
+
                 <h1>
                     <p className='text-center mb-5'>This is a Crud Application</p>
                 </h1>
+                {userName ?
+                    <h2>Welcome {userName},</h2> : <h4>You must Register/Login to get full access on this application.</h4>
+                }
                 <h4>
-                    <p >You must Register/Login to get full access on this application. </p>
+                    You can Create/Add user by clicking on 'Add User' buton or 'Create' link, both are available on Navbar.
                 </h4>
                 <h4>
-                    <p >You can Create/Add user by clicking on 'Add User' buton or 'Create' link, both are available on Navbar. </p>
+                    You can Read/Check user list by clicking on 'Read' link in the Navbar.
                 </h4>
                 <h4>
-                    <p>You can Read/Check user list by clicking on 'Read' link in the Navbar. </p>
+                    Once you have clicked on 'Read' link, a 'Users List' will appear on Screen, You can 'Edit' user details and also 'Delete' user.
                 </h4>
                 <h4>
-                    <p>Once you have clicked on 'Read' link, a 'Users List' will appear on Screen, You can 'Edit' user details and also 'Delete' user. </p>
-                </h4>
-                <h4>
-                    <p>The User will be auto logout after 9 seconds. </p>
+                    The User will be auto logout after 9 seconds.
                 </h4>
             </div>
         </Div>

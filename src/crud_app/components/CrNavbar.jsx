@@ -1,6 +1,8 @@
+import { signOut } from 'firebase/auth';
 import React, { useState } from 'react'
 import { NavLink, useNavigate } from 'react-router-dom'
 import styled from 'styled-components';
+import { auth } from '../../Firebase';
 import { laptop, minimobile, mobile, tablet } from './CrResponsive';
 
 const MainContainer = styled.div`
@@ -61,8 +63,14 @@ const Navbar = () => {
         if (userLoggedIn) {
             const confirm = window.confirm('Do you want to logout?')
             if (confirm) {
-                localStorage.removeItem('login');
-                navigate('/crud/login')
+                localStorage.clear();
+                signOut(auth)
+                    .then((res) => {
+                        navigate('/crud/login')
+                    })
+                    .catch((err) => {
+                        console.log('logout err', err)
+                    })
             }
         }
     }

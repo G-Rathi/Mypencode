@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import MainHome from './main_app/pages/MainHome';
 import MainAbout from './main_app/pages/MainAbout';
 import PageNotFound from './main_app/pages/PageNotFound';
 import Calculator from './calculator_app/pages/Calculator'
 import CrHome from './crud_app/pages/CrHome';
-import CrProtected from './crud_app/components/CrProtected';
+import CrProtected, { RegisterProtected } from './crud_app/components/CrProtected';
 import CrCreate from './crud_app/pages/CrCreate';
 import CrRead from './crud_app/pages/CrRead';
 import CrAbout from './crud_app/pages/CrAbout';
@@ -20,6 +20,7 @@ import EcomLogin from './ecommerce_app/pages/EcomLogin'
 import EcomRegister from './ecommerce_app/pages/EcomRegister'
 
 const Routers = () => {
+
     return (
         <Routes>
             <Route path='/' element={<MainHome />} />
@@ -40,7 +41,7 @@ const Routers = () => {
             <Route path='/crud/update/:id' element={<CrProtected Component={CrUpdate} />} />
             <Route path='/crud/adduser' element={<CrProtected Component={CrCreate} />} />
             <Route path='/crud/login' element={<CrLogin />} />
-            <Route path='/crud/register' element={<CrRegister />} />
+            <Route path='/crud/register' element={<RegisterProtected Component={CrRegister} />} />
 
 
             {/*Ecommerce App */}

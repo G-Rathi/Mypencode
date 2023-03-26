@@ -21,3 +21,22 @@ const CrProtected = (props) => {
 
 
 export default CrProtected
+
+const RegisterProtected = (props) => {
+    const { Component } = props;
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        const userData = localStorage.getItem('login')
+        if (userData) {
+            navigate('/crud')
+        }
+    })
+    return (
+        <div>
+            <Component />
+        </div>
+    )
+}
+
+export { RegisterProtected } 
