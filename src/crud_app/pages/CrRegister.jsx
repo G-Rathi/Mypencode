@@ -114,7 +114,7 @@ const CrRegister = () => {
 
         const create = () => {
                 if (naming.firstName && credentials.email && credentials.password && credentials.username && confirmPassword) {
-                        if (confirmPassword == credentials.password) {
+                        if (confirmPassword === credentials.password) {
                                 if (!checkbox) {
                                         setShowErr('All fileds required')
                                 } else {
