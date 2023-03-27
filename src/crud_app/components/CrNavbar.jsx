@@ -93,9 +93,6 @@ const Navbar = () => {
                     <div className="navbar-collapse " >
                         <Ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <NavLink to="/crud" className="nav-link" >Home</NavLink>
-                            </li>
-                            <li className="nav-item">
                                 <NavLink to="/crud/about" className="nav-link" >About</NavLink>
                             </li>
                             <li className="nav-item">
@@ -111,14 +108,14 @@ const Navbar = () => {
                     </AddUser>
                     <Ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <a className="nav-link" style={{ cursor: 'pointer' }} onClick={loggedIn}>Login</a>
+                            <span className="nav-link" style={{ cursor: 'pointer' }} onClick={loggedIn}>Login</span>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" style={{ cursor: 'pointer' }} onClick={Register}>Register</a>
+                            <span className="nav-link" style={{ cursor: 'pointer' }} onClick={Register}>Register</span>
                         </li>
                         {
                             userLoggedIn && <li className="nav-item">
-                                <a className="nav-link" style={{ cursor: 'pointer' }} onClick={logout}>Logout</a>
+                                <span className="nav-link" style={{ cursor: 'pointer' }} onClick={logout}>Logout</span>
                             </li>
                         }
                     </Ul>
@@ -133,8 +130,7 @@ const Navbar = () => {
                         <button className="btn btn-outline-light"
                             onClick={handleHamburger}>
                             <div>
-                                {!menubar && <div>☰</div>}
-                                {menubar && <div>X</div>}
+                                {!menubar ? '☰' : 'X'}
                             </div>
                         </button>
                     </HamburgerButton>
@@ -143,9 +139,6 @@ const Navbar = () => {
             {
                 menubar &&
                 <Bar>
-                    <Li>
-                        <NavLink to="/crud" className="nav-link" >Home</NavLink>
-                    </Li>
                     <Li className="nav-item">
                         <NavLink to="/crud/about" className="nav-link" >About</NavLink>
                     </Li>
@@ -157,14 +150,14 @@ const Navbar = () => {
                     </Li>
 
                     <Li className="nav-item">
-                        <a className="nav-link" style={{ cursor: 'pointer' }} onClick={loggedIn}>Login</a>
+                        <span className="nav-link" style={{ cursor: 'pointer' }} onClick={loggedIn}>Login</span>
                     </Li>
                     <Li className="nav-item">
-                        <a className="nav-link" style={{ cursor: 'pointer' }} onClick={Register}>Register</a>
+                        <span className="nav-link" style={{ cursor: 'pointer' }} onClick={Register}>Register</span>
                     </Li>
                     {
                         userLoggedIn && <Li className="nav-item">
-                            <a className="nav-link" style={{ cursor: 'pointer' }} onClick={logout}>Logout</a>
+                            <span className="nav-link" style={{ cursor: 'pointer' }} onClick={logout}>Logout</span>
                         </Li>
                     }
                     <button className='btn btn-outline-primary' onClick={handleButtonMPC}>Back to Main</button>

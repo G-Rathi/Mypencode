@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Routes, Route } from 'react-router-dom'
 import MainHome from './main_app/pages/MainHome';
 import MainAbout from './main_app/pages/MainAbout';
