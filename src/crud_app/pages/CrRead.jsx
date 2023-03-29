@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Suspense } from 'react'
+import React, { useState, useEffect } from 'react'
 import CrNavbar from '../components/CrNavbar'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
@@ -7,9 +7,8 @@ import { laptop, mobile, tablet } from '../components/CrResponsive'
 import Search from '../components/Search'
 
 
-
 const Container = styled.div`
-         background:  linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url("https://wallpaperaccess.com/full/4893798.jpg") center;
+background:  linear-gradient(rgba(255,255,255,0.5),rgba(255,255,255,0.5)), url("https://wallpaperaccess.com/full/4893798.jpg") center;
         background-size: cover;
         ${mobile({ width: '650px', height: '100%' })}
         `;
@@ -22,15 +21,21 @@ const Wrapper = styled.div`
 const Td = styled.td`
             ${tablet({ width: '100%', textAlign: 'center' })}
             `;
-const Button = styled.button`
+            const Button = styled.button`
             ${tablet({ margin: '5px' })}
             `;
 
-
-
+            
+            
+const Loader=()=>{
+    return(
+        <div style={{width:"85vw",height:"50vh",display:"flex",justifyContent:"center",alignItems:"center"}}><h1 >Loading... </h1></div>
+    )
+}
 
 const CrRead = () => {
     const [users, setUsers] = useState([]);
+    const [loading,setLoading]=useState(true);
     const [query, setQuery] = useState("");
     const [error, setError] = useState('');
 
@@ -38,7 +43,8 @@ const CrRead = () => {
         try {
             const fetchUsers = await axios.get('https://631879d7ece2736550cb0a11.mockapi.io/users')
             const response = await fetchUsers.data
-            setUsers(response.reverse())
+            setUsers(response)
+            setLoading(false)
         }
         catch (error) {
             setError(error.message)
@@ -76,6 +82,7 @@ const CrRead = () => {
             <Wrapper className='container pb-5 '>
                 <Search  query={query} searchFunc={searchUser}/>
                 <h1>Users List </h1>
+                        {loading?<Loader />:
                 <table className="table">
                     <thead className="bg-dark text-white">
                         <tr>
@@ -87,8 +94,7 @@ const CrRead = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {
-                            filteredData.map((user, index) => (
+                           { filteredData.map((user, index) => (
                                 <tr key={index}>
                                     <th scope="row">{index + 1}</th>
                                     <td>{user.name}</td>
@@ -103,6 +109,7 @@ const CrRead = () => {
                         }
                     </tbody>
                 </table>
+    }
             </Wrapper>
         </Container>
     )
