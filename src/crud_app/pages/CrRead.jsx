@@ -70,9 +70,6 @@ const CrRead = () => {
     })
     
     
-    if (error) {
-        return `Error:${error.message}`
-    }
     
     
     return (

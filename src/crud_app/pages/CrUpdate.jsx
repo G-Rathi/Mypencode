@@ -69,9 +69,6 @@ const CrUpdate = () => {
         loadUser();
     }, [])
 
-    if (error) {
-        return `Error:${error.message}`
-    }
 
     return (
         <Container>
