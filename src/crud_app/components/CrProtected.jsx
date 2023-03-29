@@ -11,7 +11,7 @@ const CrProtected = (props) => {
         if (!userData) {
             navigate('/crud/login')
         }
-    })
+    },[])
     return (
         <div>
             <Component />
@@ -31,7 +31,7 @@ const RegisterProtected = (props) => {
         if (userData) {
             navigate('/crud')
         }
-    })
+    },[])
     return (
         <div>
             <Component />
