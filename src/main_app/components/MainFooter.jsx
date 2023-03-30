@@ -139,12 +139,12 @@ const MainFooter = () => {
                     <Title>Contact Us</Title>
                     <ContactItem><i className="fa-solid fa-location-dot" style={{ marginRight: "10px" }} />310 Welcome, Faridabad, Haryana 123456</ContactItem>
                     <ContactItem><i className="fa-solid fa-phone" style={{ marginRight: "10px" }} />+91-9873******</ContactItem>
-                    <ContactItem><i className="fa-regular fa-envelope" style={{ marginRight: "10px" }} />contact@pencode.tech</ContactItem>
+                    <ContactItem><i className="fa-regular fa-envelope" style={{ marginRight: "10px" }} />contact@MYpencode</ContactItem>
                 </Right>
             </Wrapper>
             <CopyRightEnd>
                 <hr style={{ width: "70%", marginTop: "50px" }} />
-                Copyright &#169; 2022 pencode.tech, All Rights Reserved.
+                Copyright &#169; 2022 Mypencode, All Rights Reserved.
             </CopyRightEnd>
         </Container>
     )
