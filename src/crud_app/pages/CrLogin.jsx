@@ -117,13 +117,10 @@ const CrLogin = () => {
         if (email.length <= 3 || password.length < 5) {
             emailErrHandler();
             passwordErrHandler();
-            console.log({ 'email': email, 'password': password })
         } else {
-            console.log({ 'email': email, 'password': password })
             setLoginBtnDisabled(true);
             signInWithEmailAndPassword(auth, email, password)
                 .then((res) => {
-                    console.log('login auth response', res)
                     setLoginBtnDisabled(false);
                     localStorage.setItem('login', true);
                     navigate(-1)
@@ -143,7 +140,6 @@ const CrLogin = () => {
     function handleGoogleSignIn() {
         signInWithPopup(auth, googleProvider)
             .then((res) => {
-                console.log('google signin response', res)
                 localStorage.setItem('login', true)
                 navigate(-1)
             })
@@ -185,7 +181,6 @@ const CrLogin = () => {
                     <LoginErr>{loginError}</LoginErr>
                     <SubmitButton onClick={submit} disabled={loginBtnDisabled}>LOGIN</SubmitButton>
                     <GoogleSignInButton onClick={handleGoogleSignIn} disabled={loginBtnDisabled}>Continue With Google</GoogleSignInButton>
-                    <L>DO NOT YOU REMEMBER THE PASSWORD?</L>
                     <L><Link className='text-decoration-none' to='/crud/register'>CREATE A NEW ACCOUNT</Link></L>
                     <L> <Link className='text-decoration-none' to="/crud/">BACK TO HOME</Link></L>
                 </Form>

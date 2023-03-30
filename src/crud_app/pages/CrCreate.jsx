@@ -51,7 +51,6 @@ const CrCreate = () => {
             const userDetail = await axios.post('https://631879d7ece2736550cb0a11.mockapi.io/users', {
                 name: state.name, username: state.username, email: state.email
             })
-            console.log(userDetail)
             navigate('/crud/read')
         }
         catch (error) {

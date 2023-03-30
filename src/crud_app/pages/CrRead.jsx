@@ -53,7 +53,6 @@ const CrRead = () => {
     
     const handleDelete = async (id) => {
         const deleteUser = await axios.delete(`https://631879d7ece2736550cb0a11.mockapi.io/users/${id}`)
-        console.log(deleteUser)
         loadUsers()
     }
     

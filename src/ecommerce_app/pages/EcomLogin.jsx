@@ -103,7 +103,6 @@ const EcomLogin = () => {
                                                 passwordErr && <Error>It should contain atleast 5 character!</Error>
                                         }
                                         <Button onClick={submit}>LOGIN</Button>
-                                        <L>DO NOT YOU REMEMBER THE PASSWORD?</L>
                                         <L><Link className='text-decoration-none text-black' to='/ecom/register'>CREATE A NEW ACCOUNT</Link></L>
                                         <L> <Link className='text-decoration-none text-black' to="/ecom">BACK TO HOME</Link></L>
                                 </Form>

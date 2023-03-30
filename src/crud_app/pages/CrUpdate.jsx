@@ -56,7 +56,6 @@ const CrUpdate = () => {
         const updateUser = await axios.put(`https://631879d7ece2736550cb0a11.mockapi.io/users/${id}`, {
             name: state.name, username: state.username, email: state.email
         })
-        console.log(updateUser)
         navigate('/crud/read')
     }
 

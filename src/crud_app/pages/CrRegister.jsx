@@ -156,9 +156,6 @@ const CrRegister = () => {
         }
         const backtologin = () => navigate('/crud/login')
 
-        console.log('checkbox', checkbox)
-        console.log('naming', naming)
-        console.log('credentials', credentials)
 
         return (
                 <Container>
