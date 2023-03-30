@@ -47,7 +47,7 @@ const SubmitButton = styled.button`
         font-size: larger;
         cursor: pointer;
         margin-bottom: 10px;
-        ${mobile({ width: "50%", padding: '15px 5px' })};
+        ${mobile({ width: "100%", padding: '15px 5px' })};
 
         &:disabled{
             background-color: gray;
@@ -63,7 +63,7 @@ const GoogleSignInButton = styled.button`
         font-size: larger;
         cursor: pointer;
         margin-bottom: 10px;
-        ${mobile({ width: "50%", padding: '15px 5px' })};
+        ${mobile({ width: "100%", padding: '15px 5px' })};
 
         &:disabled{
             background-color: gray;
