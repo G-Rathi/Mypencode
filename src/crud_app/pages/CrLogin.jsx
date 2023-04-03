@@ -27,7 +27,7 @@ const Title = styled.h1`
         font-size: 25px;
         font-weight: 300; 
         `;
-const Form = styled.form`
+const Form = styled.div`
         display:flex;
         flex-direction: column;
         `;
