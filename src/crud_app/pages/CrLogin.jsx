@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import styled from 'styled-components';
 import { Link, useNavigate } from 'react-router-dom';
 import { laptop, mobile, tablet } from '../components/CrResponsive';
-import { signInWithEmailAndPassword, signInWithPopup } from 'firebase/auth';
+import { signInWithEmailAndPassword, signInWithPopup, signOut } from 'firebase/auth';
 import { auth, googleProvider } from '../../Firebase';
 
 const Container = styled.div`
@@ -124,16 +124,17 @@ const CrLogin = () => {
                     setLoginBtnDisabled(false);
                     localStorage.setItem('login', true);
                     navigate(-1)
+                    setTimeout(() => {
+                        signOut(auth)
+                            localStorage.clear()
+                            window.location.reload()
+                        }, 60000)
                 })
                 .catch((err) => {
                     console.log('auth error', err.message)
                     setLoginBtnDisabled(false);
                     setLoginError(err.message)
                 })
-            // setTimeout(() => {
-            //     localStorage.clear()
-            //     window.location.reload()
-            // }, 9000)
         }
     }
 

@@ -39,16 +39,16 @@ const CrHome = () => {
                     <h2>Welcome {userName},</h2> : <h4>You must Register/Login to get full access on this application.</h4>
                 }
                 <h4>
-                    You can Create/Add user by clicking on 'Add User' buton or 'Create' link, both are available on Navbar.
+                    You can Create/Add candidate by clicking on 'Add ' button or 'Create' link, both are available in Navbar.
                 </h4>
                 <h4>
-                    You can Read/Check user list by clicking on 'Read' link in the Navbar.
+                    You can Read/Check candidate list by clicking on 'Read' link in the Navbar.
                 </h4>
                 <h4>
-                    Once you have clicked on 'Read' link, a 'Users List' will appear on Screen, You can 'Edit' user details and also 'Delete' user.
+                    Once you have clicked on 'Read' link, a 'Candidate List' will appear on Screen, You can 'Edit' candidate details and also 'Delete' candidate.
                 </h4>
                 <h4>
-                    The User will be auto logout after 9 seconds.
+                    The User will be auto logout after 1 min.
                 </h4>
             </div>
         </Div>
